@@ -1,0 +1,114 @@
+/* A4 size setup */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 210mm; /* A4 width */
+    min-height: 297mm; /* A4 height */
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Ensuring the height fills A4 */
+@media print {
+    .container {
+        page-break-after: avoid;
+        height: 297mm;
+    }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    header {
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    ul li {
+        font-size: 0.9em;
+    }
+
+    .job h3 {
+        font-size: 1.1em;
+    }
+
+    .job p {
+        font-size: 0.9em;
+    }
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+header p {
+    color: #666;
+}
+
+a {
+    color: #0066cc;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #0066cc;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.job {
+    margin-bottom: 20px;
+}
+
+.job h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.job p {
+    color: #666;
+}
