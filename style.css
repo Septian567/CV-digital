@@ -1,4 +1,4 @@
-/* A4 size setup with margin */
+/* General body setup */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -8,61 +8,65 @@ body {
     color: #333;
 }
 
+/* Container for A4 size with responsive padding */
 .container {
-    width: 210mm; /* A4 width */
+    width: 210mm; /* A4 width for large screens */
     min-height: 297mm; /* A4 height */
-    margin: 10mm auto; /* Margin of 10mm on all sides */
+    margin: 0 auto;
     background: #fff;
-    padding: 20px;
+    padding: 20mm; /* Internal padding for desktop view */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     position: relative;
 }
 
-/* Ensuring the height fills A4 */
-@media print {
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
     .container {
-        page-break-after: avoid;
-        height: 297mm;
-        margin: 10mm; /* Maintain margin on printed version */
+        width: 90vw; /* Adjust width to viewport for medium screens (tablets) */
+        padding: 5vw; /* Internal padding based on viewport width */
     }
 }
 
-/* Responsive design for smaller screens */
 @media (max-width: 600px) {
     .container {
-        width: 100%;
-        padding: 10px;
-        margin: 5mm;
+        width: 100vw; /* Full width for mobile */
+        min-height: 100vh; /* Full height for mobile */
+        padding: 5vw; /* Internal padding for mobile */
+        margin: 0; /* No external margin for mobile */
+        box-shadow: none; /* Remove shadow for a clean mobile look */
     }
-
-    header {
-        text-align: center;
-        font-size: 1.2em;
-    }
-
-    h1 {
+    
+    /* Adjust font sizes for readability on small screens */
+    header h1 {
         font-size: 1.5em;
+    }
+    
+    header p, a, .job p, ul li {
+        font-size: 0.9em;
     }
 
     h2 {
-        font-size: 1.3em;
-    }
-
-    ul li {
-        font-size: 0.9em;
+        font-size: 1.2em;
     }
 
     .job h3 {
         font-size: 1.1em;
     }
+}
 
-    .job p {
-        font-size: 0.9em;
+/* Printing setup */
+@media print {
+    .container {
+        width: 210mm;
+        height: 297mm;
+        padding: 20mm; /* Ensure same padding on printed version */
+        margin: 0;
     }
 }
 
+/* Header styles */
 header {
     text-align: center;
     margin-bottom: 20px;
@@ -81,6 +85,7 @@ a {
     color: #0066cc;
 }
 
+/* Section styles */
 section {
     margin-bottom: 20px;
 }
